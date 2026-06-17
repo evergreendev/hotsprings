@@ -1,0 +1,56 @@
+{layout="site/_layout_default" body_class="page directory news"}
+{exp:channel:entries}
+
+<div class="container container-extended">
+  <div class="row">
+    <div class="col">
+      <div class="py-5">
+        {embed="embeds/_page_blocks" entryid="{entry_id}"}
+      </div>
+    </div>
+  </div>
+</div>
+
+{/exp:channel:entries}
+
+
+
+<div class="container container-extended">
+
+  {exp:channel:entries channel="news" dynamic="no" paginate="bottom" limit="6" status="open" show_future_entries="yes" sort="asc"}
+
+  <div class="row mb-5 pb-4">
+      <div class="col-md-4">
+        <a class="no-decoration" href="/about/news/{url_title}/">
+          <div class="news-image">
+            {if news_featured_image}
+            <img class="news-image w-100" src="{news_featured_image}" alt="{title}" title="{title}" />
+            {if:else}
+            <img class="news-image w-100" src="/uploads/member-hero/hotsprings-placeholder.jpg" alt="{title}" title="{title}" />
+            {/if}
+          </div>
+        </a>
+      </div>
+      <div class="col-md-8 pl-md-5">
+        <a class="no-decoration" href="{url_title}">
+          <h3 class="pt-3">{title}</h3>
+        </a>
+        <p>
+            {page_fluid_content:excerpt:limit characters="700" text_only="yes" remove_images="yes"}
+        </p>
+      </div>
+  </div><!-- /.row -->
+
+  <div class="row">
+    <div class="container">
+      <div class="col">
+        {paginate}
+            <p>Page {current_page} of {total_pages} pages {pagination_links}</p>
+        {/paginate}
+      </div>
+    </div>
+  </div>
+
+  {/exp:channel:entries}
+
+</div>

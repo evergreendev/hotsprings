@@ -1,0 +1,79 @@
+{layout="site/_layout_default" body_class="page directory events"}
+
+
+
+{exp:channel:entries}
+
+<div class="container container-extended">
+  <div class="row">
+    <div class="col">
+      <div class="py-5">
+      	<h1 class="heading light-droplet mt-5">{title}</h1>
+        {embed="embeds/_page_blocks" entryid="{entry_id}"}
+      </div>
+    </div>
+  </div>
+</div>
+
+{/exp:channel:entries}
+
+
+
+<div class="container container-extended">
+
+  {exp:channel:entries channel="event" dynamic="no" paginate="bottom" limit="6" status="open" show_future_entries="yes" sort="asc"}
+
+  <div class="row mb-5 pb-4">
+      <div class="col-md-4">
+        <a class="no-decoration" href="/events/{url_title}/">
+          <div class="event-image">
+            <div class="event-date d-flex align-items-center" style="opacity:0;">
+              <div class="w-100">
+                <span class="d-block text-16 font-weight-extra-bold text-center text-uppercase pb-1">{entry_date format="%M"}</span>
+                <span class="d-block text-48 font-weight-extra-bold text-center">{entry_date format="%d"}</span>
+
+                {if expiration_date && entry_date != expiration_date}
+                <div class="divider text-center"><hr /></div>
+                <span class="d-block date-to text-center w-100 text-uppercase font-weight-extra-bold">TO {expiration_date format="%M %d"}</span>
+                {/if}
+
+              </div>
+            </div>
+            {if event_featured_image}
+            <img class="event-image w-100" src="{event_featured_image}" alt="{title}" title="{title}" />
+            {if:else}
+            <img class="event-image w-100" src="/assets/img/hot-springs-placeholder.jpg" alt="{title}" title="{title}" />
+            {/if}
+          </div>
+        </a>
+      </div>
+      <div class="col-md-8 pl-md-5">
+        <a class="no-decoration" href="{url_title}">
+          <h3 class="pt-3">{title}</h3>
+        </a>
+        <p class="d-block"><span class="detail-heading opacity-50 mr-4">When:</span> {event_timeframe}</p>
+        <p class="d-block"><span class="detail-heading opacity-50 mr-4">Where:</span> {event_location}</p>
+        <div class="d-flex align-items-start">
+          {if events_tickets_url}
+          <a class="line-before font-weight-bold" href="{events_tickets_url}"target="_blank">Get Tickets</a>
+          {/if}
+          {if event_facebook_link}
+          <a class="line-before font-weight-bold ml-5 pl-5" href="{event_facebook_link}">Facebook</a>
+          {/if}
+        </div>
+      </div>
+  </div><!-- /.row -->
+
+  <div class="row">
+    <div class="container">
+      <div class="col">
+        {paginate}
+            <p>Page {current_page} of {total_pages} pages {pagination_links}</p>
+        {/paginate}
+      </div>
+    </div>
+  </div>
+
+  {/exp:channel:entries}
+
+</div>

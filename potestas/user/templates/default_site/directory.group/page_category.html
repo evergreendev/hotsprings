@@ -1,0 +1,85 @@
+{layout="site/_layout_default" body_class="page subpage directory member-directory category"}
+{layout:set name="meta"}
+<title>{exp:channel:categories style="linear"}{category_title}{/exp:channel:categories} : {site_name}</title>
+{/layout:set}
+{layout:set name="hero"}
+
+{exp:channel:categories style="linear"}
+  {if category_url_title == segment_3}
+
+
+
+<header class="category-hero">
+  <div class="overlay" style="background-image:url({category_image:large})"></div>
+    <div class="video-wrapper">
+      <div id="video" class="video d-none"></div>
+    </div>
+    <div class="d-flex text-center align-items-center h-100 w-100 heading-cont">
+      <div class="w-100 text-white">
+        <h1 class="display-3 text-capitalize mb-1">{category_name}</h1>
+        <span class="text-link text-white" data-toggle="modal" data-target="#categoryVideoModal">Watch Video</span>
+      </div>
+    </div>
+  <div class="play" data-toggle="modal" data-target="#categoryVideoModal"><i class="fab fa-youtube"></i></div>
+</header>
+
+
+{/layout:set}
+
+
+<div class="container container-extended">
+<p>Sort Members: <strong>Randomly</strong> | <a href="/member-directory/category/{category_url_title}/alphabetical">Alphabetically</a> </p>
+  {embed="embeds/_directory_listing" catid="{category_id}" sort="random"}
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="categoryVideoModal" tabindex="-1" role="dialog" aria-labelledby="categoryVideoModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="iframe-wrapper">
+          {category_youtube_embed_code}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{layout:set name="nadir"}
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+var options = {
+    url: "{category_vimeo_link}",
+    autoplay: true,
+    background: true
+  };
+
+  var videoWrapper = $('#video');
+  var videoPlayer = new Vimeo.Player('video', options);
+
+
+  $(document).ready(function(){
+    videoPlayer.on('play', function() {
+      videoWrapper.removeClass('d-none');
+      $('.overlay').css('background-image','none');
+    });
+    $('#categoryVideoModal').on('show.bs.modal', function(e){
+      videoPlayer.pause();
+    });
+    $('#categoryVideoModal').on('hide.bs.modal', function(e){
+      videoPlayer.play();
+    });
+  });
+
+</script>
+{/layout:set}
+
+{/if}
+{/exp:channel:categories}

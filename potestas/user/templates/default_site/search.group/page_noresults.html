@@ -1,0 +1,47 @@
+{layout="site/_layout_default" body_class="page search"}
+
+{layout:set name="styles"}
+<link rel="stylesheet" type="text/css" href="/assets/style/beta.css">
+{/layout:set}
+
+{exp:channel:entries entry_id="36"}
+
+{layout:set name="hero"}
+
+<div id="hero" class="row def">
+	<div class="container container-extended">
+		<div class="row">
+			<div class="col-12">
+				<h1 class="py-3">Search</h1>
+			</div>
+		</div>
+	</div>
+</div>
+
+{/layout:set}
+
+<div class="row">
+	<div class="container container-extended">
+<div class="row">
+	<div class="col-12 main-col">
+    <p>
+      We're sorry, that search returned no results. Please try again.
+    </p>
+    <p class="pt-3"><a href="/" title="Hot Springs Home" class="btn btn-primary">Home Page</a></p>
+	</div>
+		</div>
+	</div>
+</div>
+
+
+{layout:set name="post_contents"}
+{embed="embeds/_blk_inquiry"}
+{/layout:set}
+
+{layout:set name="nadir"}
+<script type="text/javascript">
+$('.tel').text(function(i, text) {
+	return text.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+});
+</script>
+{/layout:set}

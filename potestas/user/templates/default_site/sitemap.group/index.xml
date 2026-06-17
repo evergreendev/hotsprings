@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+ {exp:channel:entries channel="home"}
+<url>
+  <loc>https://gpna.com</loc>
+  <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+{/exp:channel:entries}
+ {exp:channel:entries channel="secondary_page|business|event|news" orderby="entry_id" sort="asc"}
+<url>
+  <loc>{page_url}</loc>
+  <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+{/exp:channel:entries}
+</urlset>

@@ -1,0 +1,28 @@
+{layout="site/_layout_default" body_class="page subpage"}
+
+{exp:channel:entries}
+
+<div class="container container-extended">
+  <div class="row">
+    <div class="col py-3">
+      <h1 class="heading light-droplet mt-5">{title}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+<a href="{magazine_link}" title="Southern Hills Vacation Guide" target="_blank">
+        <img class="w-100" src="{magazine_cover_image}" alt="Hot Springs Welcome Magazine Cover" title="Southern Hills Vacation Guide" />
+      </a>       
+    </div>
+    <div class="col-md-6">
+      <p>
+        “Soak in” Hot Springs yourself!<br />
+        Click <a href="{magazine_link}" target="_blank">HERE</a> to view the Southern Hills Vacation Guide!<br>
+        Complete the form below to request a Welcome Magazine by mail.       
+      </p>
+      {exp:freeform_next:render form="southern_hills_vacation_guide" submit_class="btn btn-primary" label_class="form-label" input_class="form-control" row-class="form-group" id="conForm"}
+    </div>
+  </div>
+</div>
+
+{/exp:channel:entries}

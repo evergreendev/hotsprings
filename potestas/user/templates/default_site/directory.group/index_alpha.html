@@ -1,0 +1,64 @@
+{layout="site/_layout_default" body_class="page directory member-directory"}
+
+<div class="container">
+  <div class="row">
+    <div class="col mb-5">
+      <h2 class="mb-0 mb-md-3 text-center">Categories</h2>
+      <div class="d-block d-md-flex justify-content-md-between text-center">
+        <a class="d-block w-100 my-3 my-md-0" href="/member-directory/category/attractions/">Attractions</a>
+        <a class="d-block w-100 my-3 my-md-0" href="/member-directory/category/dining/">Dining</a>
+        <a class="d-block w-100 my-3 my-md-0" href="/member-directory/category/lodging/">Lodging</a>
+        <a class="d-block w-100 my-3 my-md-0" href="/member-directory/category/services/">Services</a>
+        <a class="d-block w-100 my-3 my-md-0" href="/member-directory/category/shopping/">Shopping</a>
+        <a class="d-block w-100 my-3 my-md-0" href="/member-directory/category/camping-rv/">RV/Camping</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container container-extended">
+<p>Sort Members: <strong>Randomly</strong> | <a href="/member-directory">Alphabetically</a></p>
+  {exp:channel:entries channel="business" dynamic="no" status="open" limit="15" orderby="random" sort="asc" }
+
+
+  <div class="row mb-5 pb-4 here2">
+      <div class="col-md-4">
+        <a class="no-decoration" href="{page_uri}/">
+					<div class="business-image">
+            {if member_featured_image}
+						<img class="w-100" alt="{title}" src="{member_featured_image:small}" title="{title}" />
+            {if:else}
+            <img class="w-100" alt="{title}" src="/assets/img/hot-springs-placeholder.jpg" title="{title}" />
+            {/if}
+					</div>
+        </a>
+      </div>
+      <div class="col-md-8 pl-md-5">
+        <a class="no-decoration" href="{page_uri}/">
+          <h3 class="pt-3 mb-0">{title}</h3>
+        </a>
+        <p>
+          {categories}<span class="mr-2">{category_name}</span>{/categories}
+        </p>
+        <p>
+          {member_content:excerpt:limit characters="360" text_only="yes" remove_images="yes"}
+        </p>
+        <div class="d-flex align-items-start">
+          <a class="line-before font-weight-bold" href="{page_uri}/">Learn More</a>
+        </div>
+      </div>
+  </div><!-- /.row -->
+
+  <div class="row">
+    <div class="container">
+      <div class="col">
+        {!--{paginate}
+            <p>Page {current_page} of {total_pages} pages {pagination_links}</p>
+        {/paginate}--}
+      </div>
+    </div>
+  </div>
+
+  {/exp:channel:entries}
+
+</div>

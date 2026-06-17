@@ -1,0 +1,408 @@
+{layout="site/_layout_default" body_class="page single directory profile"}
+{exp:structure:entries}
+{layout:set name="hero"}
+{if member_hero}
+<div class="hero d-flex flex-column" style="background:url({member_hero});">
+{if:else}
+<div class="hero d-flex flex-column" style="background:url({member_featured_image:large});">
+{/if}
+  <div class="desktop-overlay d-lg-block"></div>
+
+    <div class="heading-container flex-grow-1 d-lg-flex align-items-end">
+      <div class="w-100 d-block">
+        <div class="container container-extended mb-auto d-flex align-items-md-end pb-5">
+          <div class="row">
+            <div class="col-12">
+
+              <div class="d-flex h-100 align-items-center">
+                <div>
+                  <div>
+                    <!--<span class="text-white"></span>-->
+                    <h1 id="listing-title-text" style="text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; color:#fff; font-family: "Literata",serif; font-size: 47px;">{title}</h1>
+                  </div>
+                  <span class="line-before" style="text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; color:#fff; font-family: "Literata",serif;">Welcome to Hot Springs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="form-container bg-white bg-lg-transparent">
+    <div class="container container-extended pt-5 pt-lg-0">
+      <div class="row">
+        <div class="col-lg-11">
+          <div class="row">
+            <div class="col-md-3 bg-white d-flex align-items-center justify-content-left justify-content-md-center">
+              <div class="subpage-hero-content d-flex align-items-center justify-content-center">
+                <div class="d-inline-block">
+                  <span class="text-uppercase text-darkblue d-block font-weight-bold">GET DIRECTIONS</span>
+                  <p class="mb-0">
+                    {member_location}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 px-md-0 bg-white d-flex align-items-center justify-content-left justify-content-md-center">
+              <div class="subpage-hero-content d-flex align-items-center justify-content-center">
+                <div class="inline-block">
+                  <div class="inline-block">
+                    <span class="text-uppercase text-darkblue font-weight-bold">CALL NOW</span>
+                    <p>
+                      {member_phone}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 px-md-0 bg-white d-flex align-items-center justify-content-left justify-content-md-center">
+              <div class="subpage-hero-content d-flex align-items-center justify-content-center">
+                <div class="inline-block">
+                  <span class="text-uppercase text-darkblue d-block font-weight-bold">VISIT</span>
+                  <p>
+                    <a class="no-decoration" href="{member_website}">WEBSITE</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 px-md-0 d-flex align-items-center justify-content-center bg-darkblue d-none">
+              <div class="form-holder d-none">
+                {if member_booking_link}
+                  <a target="_blank" href="{member_booking_link}">
+                    <button class="blue-block my-3 my-lg-0" type="submit">
+                        <span class="line-after text-white text-left">NEXT</span>
+                        <span class="text-white text-28">Book Now <i class="far fa-arrow-right"></i></span>
+                    </button>
+                  </a>
+                {if:else}
+                <form class="" action="https://hotsprings.blackhillsvacations.com/ecomm/shop/lodging/650579/en-US/" method="get" target="_blank">
+                  <button class="blue-block my-3 my-lg-0" type="submit">
+                      <span class="line-after text-white">NEXT</span>
+                      <span class="text-white text-28">Book Now <i class="far fa-arrow-right"></i></span>
+                  </button>
+                </form>
+                {/if}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div><!-- /.hero -->
+
+{/layout:set}
+
+
+
+<div class="container container-extended">
+  <div class="row">
+    <div class="col-11">
+      <h2 class="heading light-droplet">Description</h2>
+      {member_content}
+
+
+      <div class="social pb-5 pt-5">
+        {member_social}
+        {if member_social:member_facebook}
+        <a class="mr-4 text-40 text-darkblue" href="{member_social:member_facebook}"><i class="fab fa-facebook-f"></i></a>
+        {/if}
+        {if member_social:member_instagram}
+        <a class="mr-4 text-40 text-darkblue" href="{member_social:member_instagram}"><i class="fab fa-instagram"></i></a>
+        {/if}
+        {if member_social:member_tripadvisor}
+        <a class="mr-4 text-40 text-darkblue" href="{member_social:member_tripadvisor}"><i class="fab fa-tripadvisor"></i></a>
+        {/if}
+        {if member_social:member_twitter}
+        <a class=" text-40 text-darkblue" href="{member_social:member_twitter}"><i class="fab fa-twitter"></i></a>
+        {/if}
+        {/member_social}
+      </div>
+
+      {if member_hours}
+      <div class="hours-section pb-5">
+        <div class="row">
+          <div class="col-lg-11">
+            <h2 class="heading">Hours</h2>
+            {member_hours}
+            <span class="text-uppercase font-weight-bold mr-4">{member_hours:days}</span> <span class="">{member_hours:hours}</span><br/>
+            {/member_hours}
+          </div>
+        </div>
+      </div>
+      {/if}
+
+
+      {if member_amenities}
+      <div class="ammenities-section pb-5">
+        <div class="row">
+          <div class="col-lg-11">
+
+            <h2 class="heading light-droplet">Amenities</h2>
+
+            <div class="row">
+              {member_amenities}
+              <div class="col-md-4 {if member_amenities:count > 3}pt-3{/if}">
+                {member_amenities:amenity}
+              </div>
+              {/member_amenities}
+            </div>
+          </div>
+        </div>
+      </div>
+      {/if}
+
+    </div>
+  </div>
+</div>
+
+
+{if member_gallery}
+<div class="gallery-section pb-5">
+  <div class="container container-extended">
+    <div class="row">
+      <div class="col-lg-11">
+        <div class="listing-gallery">
+          {member_gallery}
+          <div class="position-relative">
+            <img class="w-100" src="{member_gallery:file:medium}" alt="{member_gallery:file_name}" title="{member_gallery:file_name}" />
+            <span class="number text-14">{member_gallery:count} / {member_gallery:total_rows}</span>
+            <div class="arrow-area"></div>
+          </div>
+
+          {/member_gallery}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{/if}
+
+
+
+{if member_testimonials}
+<div class="testimonial-section pt-5">
+  <div class="container container-extended">
+    <div class="row">
+      <div class="col-lg-11">
+        <h2 class="heading light-droplet">Testimonials</h2>
+        {member_testimonials}
+        <h3 class="font-weight-normal">{member_testimonials:title}</h3>
+        {member_testimonials:testimonial}
+
+        <p class="attribution mt-4">
+          {member_testimonials:attribution}
+        </p>
+
+        {/member_testimonials}
+      </div>
+    </div>
+  </div>
+</div>
+{/if}
+
+
+
+{if member_faqs}
+<div class="faq-section pt-5">
+
+  <div class="collapsable-faq">
+    <div class="container container-extended">
+      <div class="row">
+        <div class="col-lg-6">
+          <h2 class="heading light-droplet">FAQ's</h2>
+          <div class="accordion" id="faqAccordian">
+
+            {member_faqs}
+
+            <div class="card">
+              <div class="card-header" id="heading{member_faqs:count}">
+                <h2 class="mb-0">
+                  <a class="" type="button" data-toggle="collapse" data-target="#collapse{member_faqs:count}" aria-expanded="true" aria-controls="collapse{member_faqs:count}">
+                    Q: {member_faqs:question}
+                  </a>
+                </h2>
+              </div>
+
+              <div id="collapse{member_faqs:count}" class="collapse {if member_faqs:count == 1}show{/if}" aria-labelledby="heading{member_faqs:count}" data-parent="#faqAccordian">
+                <div class="card-body pt-5">
+                  A: {member_faqs:answer}
+                </div>
+              </div>
+
+            </div><!-- /.card -->
+            {/member_faqs}
+
+
+          <a class="line-before d-block pt-5 mt-3" href="#contactForm" title="Contact Us">CONTACT US</a>
+        </div><!-- /.accordian -->
+      </div><!-- /.col -->
+      <div class="col-lg-6 d-none d-sm-block">
+        <div class="image-array">
+          {member_faq_images}
+
+          {if member_faq_images:image_1}
+          <img class="image-1" src="{member_faq_images:image_1}" alt="" title="" />
+          {/if}
+          {if member_faq_images:image_2}
+          <img class="image-2" src="{member_faq_images:image_2}" alt="" title="" />
+          {/if}
+          {if member_faq_images:image_3}
+          <img class="image-3" src="{member_faq_images:image_3}" alt="" title="" />
+          {/if}
+          {/member_faq_images}
+        </div>
+      </div>
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</div>
+{/if}
+
+{if video_embed}
+<div class="video-section pb-5 mb-4">
+  <div class="container container-extended">
+    <div class="row">
+      <div class="col-12">
+        <div class="d-flex justify-content-center">
+          <div class="youtube-player" data-id="{video_embed}"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{/if}
+
+
+<div id="contactForm" class="contact-form d-none">
+  <div class="container container-extended">
+    <div class="row">
+      <div class="col-md-6">
+        <h2 class="heading white-droplet">Contact Us</h2>
+        <div class="row">
+          <div class="col-sm-7 bordered">
+            <span class="font-weight-bold d-block w-100">GET DIRECTIONS</span>
+            <span class="address d-block w-100">{member_location}</span>
+          </div>
+          <div class="col-sm-4 offset-md-1">
+            <span class="font-weight-bold d-block w-100">CALL NOW</span>
+            <span class="address d-block w-100">{member_phone}</span>
+          </div>
+        </div>
+        {exp:freeform_next:form form="contact_form" submit_class="btn btn-light" label_class="form-label" input_class="form-control" row-class="form-group" id="conForm" return=""}
+        <div class="freeform-row py-4 mb-2">
+          <div class="freeform-column">
+            <input class="w-100" name="name" type="text" placeholder="Name" />
+          </div>
+        </div>
+        <div class="freeform-row pb-4 mb-2">
+          <div class="freeform-column">
+            <input class="w-100" name="email" type="text" placeholder="Email" />
+          </div>
+        </div>
+        <div class="freeform-row pb-4 mb-2">
+          <div class="freeform-column text-right">
+            <textarea class="w-100" name="message" placeholder="Message"></textarea>
+          </div>
+        </div>
+
+        <input type="hidden" name="member_title" value="{title}" />
+        <div class="freeform-row pb-4 mb-2">
+          <div class="freeform-column text-right">
+            <button class="btn btn-light" type="submit" name="form_page_submit">Submit</button>
+          </div>
+        </div>
+
+        {/exp:freeform_next:form}
+      </div>
+      <div class="col-md-6">
+        {if member_latitude}
+        <div id="mapFrame" class="mt-5" style="width:100%;height: 500px;"></div>
+        {/if}
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+{layout:set name="nadir"}
+<script>
+  $(document).ready(function(){
+    $('.listing-gallery').slick();
+  });
+</script>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRRuWTRdWSoRzd6zxV3iofGZcUCjeBw8w" type="text/javascript"></script>
+<script type="text/javascript">
+	var locations = [
+    ["{title}","{member_latitude}","{member_longitude}","{count}","{member_featured_image:small}",
+    "/membership/member-directory/{url_title}"],
+	];
+
+    var map = new google.maps.Map(document.getElementById('mapFrame'), {
+      zoom: 15,
+      center: new google.maps.LatLng({member_latitude},{member_longitude}),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+			var htmlMarker = "<div class='member-card'><h2>" + locations[i][0] + "</h2><img src='" + locations[i][4] + "' class='img-fluid' alt='" + locations[i][0] + "'><p><a href='" + locations[i][5] +"' title='" + locations[i][0] + "' class='btn btn-primary btn-listing'>View Listing</a></p></div>";
+          infowindow.setContent(htmlMarker);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded",
+  function() {
+      var div, n,
+          v = document.getElementsByClassName("youtube-player");
+          //console.log(v);
+      for (n = 0; n < v.length; n++) {
+          div = document.createElement("div");
+          div.setAttribute("data-id", v[n].dataset.id);
+          div.innerHTML = labnolThumb(v[n].dataset.id);
+          div.onclick = labnolIframe;
+          v[n].appendChild(div);
+      }
+  });
+
+  function labnolThumb(id) {
+      var thumb = '<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg">',
+          play = '<div class="play"><i class="fab fa-youtube"></i></div>';
+      return thumb.replace("ID", id) + play;
+  }
+
+  function labnolIframe() {
+      var iframe = document.createElement("iframe");
+      var embed = "https://www.youtube.com/embed/ID?autoplay=1";
+      iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
+      iframe.setAttribute("frameborder", "0");
+      iframe.setAttribute("allowfullscreen", "1");
+      this.parentNode.replaceChild(iframe, this);
+  }
+
+  jQuery('.youtube-player').click(function(){
+    jQuery(this).addClass('iframe-wrapper');
+  });
+
+</script>
+
+{/layout:set}
+{/exp:structure:entries}

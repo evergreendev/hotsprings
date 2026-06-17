@@ -1,0 +1,19 @@
+{layout="site/_layout_default" body_class="page subpage"}
+
+{exp:channel:entries}
+
+<div class="container container-extended">
+  <div class="row">
+    <div class="col py-3">
+      <h1 class="heading light-droplet mt-5">{title}</h1>
+      {embed="embeds/_page_blocks" entryid="{entry_id}"}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      {exp:freeform_next:render form="contact_form" submit_class="btn btn-default" label_class="form-label" input_class="form-control" row-class="form-group" id="conForm"}
+    </div>
+  </div>
+</div>
+
+{/exp:channel:entries}

@@ -1,0 +1,28 @@
+{layout="site/_layout_default" body_class="page subpage"}
+
+{exp:channel:entries}
+
+<div class="container container-extended">
+  <div class="row">
+    <div class="col">
+      <h1 class="heading light-droplet mt-5">{title}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>Get started</h2>
+      <p>
+        Fill out the form below and we'll be in touch shortly.
+      </p>
+      {exp:freeform_next:render form="join_the_chamber" submit_class="btn btn-primary" label_class="form-label" input_class="form-control" row-class="form-group" id="conForm"}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col py-3">
+
+      {embed="embeds/_page_blocks" entryid="{entry_id}"}
+    </div>
+  </div>
+</div>
+
+{/exp:channel:entries}

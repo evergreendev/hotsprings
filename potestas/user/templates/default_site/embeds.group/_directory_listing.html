@@ -1,0 +1,82 @@
+<?php 
+  $values = array();
+  //echo "{embed:catid}";
+  //echo "{embed:sort}" == "random";
+  ?>
+  {exp:channel:entries channel="business" dynamic="no" sort="desc" paginate="bottom" status="open" limit="9999" category="{embed:catid}" orderby="random"
+  }
+  <?php
+  array_push($values, array("url" => "{url_title}","title" => "{title}","category_url_title" => "{category_url_title}", "page_uri" => "{page_uri}", "text" => '{member_content:excerpt:limit characters="360" text_only="yes" remove_images="yes"}', "member_featured_image" => "{member_featured_image:small}"))
+  ?>
+  {/exp:channel:entries}
+  <?php
+  $vara = $values;
+   // print_r(asort($vara));
+   $sort = {embed:sort};
+   if($sort == "title"){
+   asort($vara);
+   }
+   
+  
+  // print_r($vara);
+ foreach ($vara as $key => $value) {
+  // echo $value['title'];
+  // echo "<br>";
+  ?>
+  <div class="row mb-5 pb-4 here1">
+    <div class="col-md-4">
+      <a class="no-decoration" href="<?php echo $value['page_uri']?>">
+        <div class="business-image">
+          <?php if($value['member_featured_image'] !=''){ ?>
+          <img class="w-100" alt="<?php echo $value['title']?>" src="<?php echo $value['member_featured_image']?>" title="<?php echo $value['title']?>" />
+      <?php }else{ ?>
+          <img class="w-100" alt="{title}" src="/assets/img/hot-springs-placeholder.jpg" title="{title}" />
+      <?php } ?>
+     
+        </div>
+      </a>
+    </div>
+    <div class="col-md-8 pl-md-5">
+      <a class="no-decoration" href="<?php echo $value['page_uri']?>">
+        <h3 class="pt-3"><?php echo $value['title']?></h3>
+      </a>
+      <p>
+        <?php echo $value['text']?>
+       
+      </p>
+      <div class="d-flex align-items-start">
+        <a class="line-before font-weight-bold" href="<?php echo $value['page_uri']?>/">Learn More</a>
+      </div>
+    </div>
+  </div><!-- /.row -->
+  <?php
+ }
+  ?>
+
+ {!--exp:channel:entries channel="business" dynamic="no" paginate="bottom" status="open" sort="asc" limit="9999" category="{embed:catid}" orderby="title"}
+  <div class="row mb-5 pb-4 here1">
+    <div class="col-md-4">
+      <a class="no-decoration" href="{page_uri}/">
+        <div class="business-image">
+          {if member_featured_image}
+          <img class="w-100" alt="{title}" src="{member_featured_image:small}" title="{title}" />
+          {if:else}
+          <img class="w-100" alt="{title}" src="/assets/img/hot-springs-placeholder.jpg" title="{title}" />
+          {/if}
+        </div>
+      </a>
+    </div>
+    <div class="col-md-8 pl-md-5">
+      <a class="no-decoration" href="{page_uri}/">
+        <h3 class="pt-3">{title}</h3>
+      </a>
+      <p>
+        {member_content:excerpt:limit characters="360" text_only="yes" remove_images="yes"}
+      </p>
+      <div class="d-flex align-items-start">
+        <a class="line-before font-weight-bold" href="{page_uri}/">Learn More</a>
+      </div>
+    </div>
+  </div><!-- /.row -->
+
+  {/exp:channel:entries--}

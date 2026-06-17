@@ -1,0 +1,39 @@
+{if segment_1 == ''}
+{exp:channel:entries entry_id="3" dyanmic="no" channel="home"}
+{exp:seo_lite entry_id="3"}
+<title>{entry_title} : {site_name}</title>
+<meta name='keywords' content='{meta_keywords}' />
+<meta name='description' content='{meta_description}' />
+<link rel='canonical' href='{canonical_url}' />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{canonical_url}"/>
+<meta property="og:title" content="{entry_title} : {site_name}"/>
+<meta property="og:description" content="{meta_description}"/>
+<meta property="og:image" content="/assets/img/static/hot-springs-placeholder.jpg"/>
+{/exp:seo_lite}
+{/exp:channel:entries}
+{if:else}
+{exp:structure:entries {if embed:entryid}entry_id="{embed:entryid}"{/if}}
+{exp:seo_lite entry_id="{entry_id}"}
+{if segment_2 =="category" && segment_3 != ''}
+<title>{segment_3} : {site_name}</title>
+{if:else}
+<title>{entry_title} : {site_name}</title>
+{/if}
+<meta name='keywords' content='{meta_keywords}' />
+<link rel='canonical' href='{canonical_url}' />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{canonical_url}"/>
+<meta property="og:title" content="{entry_title} : {site_name}"/>
+<meta property="og:description" content="{meta_description}"/>
+{if member_featured_image}
+	<meta property="og:image" content="{member_featured_image}"/>
+{if:elseif event_featured_image}
+  <meta property="og:image" content="{event_featured_image}"/>  
+{if:else}
+  <meta property="og:image" content="/assets/img/static/hot-springs-placeholder.jpg"/>
+{/if}
+
+{/exp:seo_lite}
+{/exp:structure:entries}
+{/if}

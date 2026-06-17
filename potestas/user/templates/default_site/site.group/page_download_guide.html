@@ -1,0 +1,40 @@
+{layout="site/_layout_default" body_class="page subpage"}
+
+{exp:channel:entries}
+
+<div class="container container-extended">
+  <div class="row">
+    <div class="col py-3">
+      <h1 class="heading light-droplet mt-5">{title}</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <a href="{magazine_link}" title="{title} Cover" target="_blank">
+        {magazine_cover_image}
+          <img class="w-100" src="{url}" alt="{title} Cover" title="{title} Cover" />
+        {/magazine_cover_image}
+      </a>
+    </div>
+
+<div class="col-md-6">
+  <p>
+    Click <a href="{magazine_link}" title="{title}" target="_blank">HERE</a> to view the magazine!<br>
+    Complete the form below to request a copy by mail.
+  </p>
+
+  {exp:freeform_next:render
+    form="request_visitors_guide"
+    submit_class="btn btn-primary"
+    label_class="form-label"
+    input_class="form-control"
+    row-class="form-group"
+    id="conForm"}
+</div>
+
+
+  </div>
+</div>
+
+{/exp:channel:entries}

@@ -1,0 +1,609 @@
+{layout="site/_layout_default" body_class="home"}
+{exp:channel:entries channel="home" entry_id="3"}
+
+{layout:set name="scripts"}
+<script async src="https://www.youtube.com/iframe_api"></script>
+{/layout:set}
+
+{layout:set name="hero"}
+<div id="home-banner-box" class="hero d-flex flex-column" style="background-image: url({hero})">
+    <!--    <div class="image video-slide" style="background-image: url(https://img.youtube.com/vi/JmBmN_lrZ8Y/hqdefault.jpg)">
+            <div class="video-background">
+                <div class="video-foreground" id="YouTubeBackgroundVideoPlayer">
+                </div>
+            </div>
+        </div>-->
+    <div class="d-flex align-items-center video-heading-container">
+        <div>
+            <h2 class="heading">{hero_heading}</h2>
+            <h3 class="sub-heading">{home_hero_subheading}</h3>
+            <a href="http://business.hotsprings-sd.com/applicationtojoin">Join Now</a>
+        </div>
+    </div>
+    <div class="image video-slide">
+
+        <h1 class="d-none">Hot Springs Chamber of Commerce</h1>
+    </div>
+</div>
+
+<!-- Springtides newsletter primary promo -->
+<div class="swoop-divider mb-4"></div>
+<div class="container container-extended my-5">
+    <div class="row align-items-center py-4 px-3 bg-light">
+        <div class="col-lg-8">
+            <h2 class="heading mb-2">Springtides Weekly E-Newsletter</h2>
+            <p class="mb-0">Sign up to see what's going on in Hot Springs! Get an update every Thursday on activities &
+                events around the Hot Springs area.</p>
+        </div>
+        <div class="col-lg-4 text-lg-right mt-3 mt-lg-0">
+            <a class="btn btn-default"
+               href="https://visitor.r20.constantcontact.com/manage/optin?v=001AYBE7UAKClmke4CvVkMlXiWmvm_wSW4jYpDCtwx7P1yGnTeuTPnP37G7PnSG6SylzZaYweM_WeAWIqAqppv6QaeQwlzH2wijciBlZmw06YWxnMqYtKc8Hy2UcuAFHBQPTzh3Vqva8c9c8iRA80EaigIpDw0yq6E1"
+               target="_blank" rel="noopener">Sign Up</a>
+        </div>
+    </div>
+
+
+    {if springtide_url}
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="newsletter-preview embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item"
+                        src="{springtide_url}"
+                        title="Springtides Newsletter Preview" loading="lazy" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+{/if}
+<div class="form-container bg-white position-relative d-none">
+    <div class="container container-extended pt-5 pt-lg-0">
+        <div class="form-holder">
+            <form class="w-100" action="https://hotsprings.blackhillsvacations.com/ecomm/shop/lodging/650579/en-US/"
+                  method="get" target="_blank">
+                <div class="d-flex justify-content-between flex-wrap">
+
+                    <div class="check-in mr-lg-0 pb-2 pb-lg-0 pt-lg-2">
+                        <span class="d-block pb-lg-3">DATES</span>
+                        <input id="hiddenArrival" name="arrivaldate" type="hidden"/>
+                        <a id="arrivalClick" class="text-darkblue text-28 text-literata" href="#"><span
+                                id="arrivalText">Check in</span> <i
+                                class="far fa-angle-down float-right ml-lg-4"></i></a>
+                    </div>
+
+                    <div class="check-out mx-lg-0 pb-2 pb-lg-0 mb-3 mb-lg-0 pt-lg-2">
+                        <span class="d-block pb-lg-3">&nbsp;</span>
+                        <input id="hiddenDepart" name="departuredate" type="hidden"/>
+                        <a id="departureClick" class="text-darkblue text-28 text-literata" href="#"><span
+                                id="departText">Check out</span> <i
+                                class="far fa-angle-down float-right ml-lg-4"></i></a>
+                    </div>
+
+                    <div id="adultCounter" class="mr-4 pt-lg-2">
+                        <label class="d-block">ADULTS</label>
+                        <a href="#" id="minusAdult" class="text-darkblue text-28">-</a>
+                        <input id="numberAdults" class="number-input text-28 text-literata" type="text"
+                               name="adultcount" value="0">
+                        <a href="#" id="plusAdult" class="text-darkblue text-28">+</a>
+                    </div>
+
+                    <div class="d-lg-none">
+                        <span class="d-block text-28 d-block mt-4 pt-3"> | </span>
+                    </div>
+
+                    <div id="childCounter" class="mx-4 mx-lg-0 pt-lg-2">
+                        <label class="d-block">CHILDREN</label>
+                        <a href="#" id="minusChild" class="text-darkblue text-28">-</a>
+                        <input type="text" id="numberChild" class="number-input text-28 text-literata"
+                               name="childCount" value="0">
+                        <a href="#" id="plusChild" class="text-darkblue text-28">+</a>
+                    </div>
+
+
+                    <button class="blue-block my-3 my-lg-0" type="submit">
+                        <span class="line-after text-white">NEXT</span>
+                        <span class="text-white text-28 text-literata">Book Now <i
+                                class="far fa-arrow-right"></i></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{/layout:set}
+
+<h2 class="heading home-content-header">{home_content_header}</h2>
+<div class="home-content">
+    <div class="home-content__inner">
+        {home_content}
+    </div>
+</div>
+
+<!--<div class="top-attractions-section mx-0">
+    <div class="">
+        <div>
+
+            &lt;!&ndash;      <div class="col-lg-3">
+                    <h2 class="heading white-droplet text-48">Attractions</h2>
+                    <div class="slide-titles pb-5 pb-lg-0 d-none d-md-block">
+
+                      {home_attractions}
+                      <h3 class="slide-quick-links font-weight-normal"><a class="no-decoration" href="/member-directory/{home_attractions:url_title}/"><span class="grey-number">{home_attractions:count}</span> {home_attractions:title}</a></h3>
+                      {/home_attractions}
+
+
+                    </div>
+                  </div>&lt;!&ndash; /.col-md-3 &ndash;&gt;&ndash;&gt;
+            <div class="d-flex align-items-center justify-content-around w-100 pt-5">
+                <h2 class="heading white-droplet text-48">Attractions</h2>
+            </div>
+
+            <div class="col-lg-12 pr-sm-0 attraction-grid"> {home_attractions}
+                <div class="slide-item">
+                    <a class="no-decoration" href="/member-directory/{home_attractions:url_title}/">
+                        <div class="item-img">
+                            {if home_attractions:member_featured_image}
+                            <div class="slide-img-container"
+                                 style="background: url({home_attractions:member_featured_image:home-featured});"></div>
+                            {if:else}
+                            <div class="slide-img-container"
+                                 style="background: url(/assets/img/hot-springs-placeholder.jpg);"></div>
+                            {/if}
+                        </div>
+                        <div class="item-content">
+                            <h3 class="font-weight-normal">{home_attractions:title}</h3>
+                            <p class="pb-3">
+                                {if home_attractions:member_content}
+                                {home_attractions:member_content:excerpt:limit characters="160" text_only="yes"
+                                remove_images="yes"}
+                                {if:else}
+                                &nbsp;
+                                {/if}
+                            </p>
+                            <span class="line-before font-weight-bold text-uppercase" href="#">{if home_attractions:member_callout_button_text}{home_attractions:member_callout_button_text}{if:else} PLAN YOUR NEXT TRIP {/if}</span>
+                        </div>
+                    </a>
+                </div>
+                {/home_attractions}
+                &lt;!&ndash;        <a class="line-before" href="">SHOW TRAVEL ITINERARIES</a>&ndash;&gt;
+                &lt;!&ndash;        <div class="slider-inner">
+                          <div id="attractionsSlider">
+
+
+
+                          </div>
+                        </div>&ndash;&gt;
+
+
+            </div>
+        </div>
+    </div>
+</div>-->
+
+
+{/exp:channel:entries}
+
+
+<!--<div class="featured-business-section">
+    <div class="container-fluid container-margin-left">
+        <div class="row">
+
+            <div class="col-lg-3">
+                <h2 class="heading light-droplet text-48 text-white">Featured Businesses</h2>
+                <div class="slide-titles pb-5 pb-lg-0 d-none d-md-block">
+
+                    {exp:channel:categories limit="6" dynamic="no"}
+                    <h3 class="slide-quick-links font-weight-normal"><a class="no-decoration"
+                                                                        href="/member-directory/category/{category_url_title}/"><span
+                            class="grey-number">{count}</span> {category_name}</a></h3>
+                    {/exp:channel:categories}
+
+                    <a class="line-before-light" href="">SEE ALL BUSINESSES</a>
+                </div>
+            </div>&lt;!&ndash; /.col-md-3 &ndash;&gt;
+
+
+            <div class="col-lg-9 pr-sm-0">
+                <div class="slider-inner">
+                    <div id="businessSlider">
+
+                        {exp:channel:entries dynamic="no" channel="home"}
+                        {if home_featured_businesses}
+
+                        {home_featured_businesses}
+                        <div class="slide-item">
+                            <a class="no-decoration" href="/member-directory/{home_featured_businesses:url_title}/">
+                                <div class="item-img">
+                                    &lt;!&ndash;<img src="{member_featured_image}" alt="Logo" />&ndash;&gt;
+                                    {if home_featured_businesses:member_featured_image}
+                                    <div class="slide-img-container"
+                                         style="background: url({home_featured_businesses:member_featured_image:home-featured});"></div>
+                                    {if:else}
+                                    <div class="slide-img-container"
+                                         style="background: url(/assets/img/hot-springs-placeholder.jpg);"></div>
+                                    {/if}
+                                </div>
+                                <div class="item-content">
+                                    <h3 class="font-weight-normal"><span class="grey-number">{home_featured_businesses:count}</span>
+                                        {home_featured_businesses:title}</h3>
+                                    <p class="pb-3">
+                                        {if home_featured_businesses:member_content}
+                                        {home_featured_businesses:member_content:excerpt:limit characters="160"
+                                        text_only="yes" remove_images="yes"}
+                                        {if:else}
+                                        &nbsp;
+                                        {/if}
+                                    </p>
+                                    <span class="line-before">{if home_featured_businesses:member_callout_button_text}{home_featured_businesses:member_callout_button_text}{if:else} LEARN MORE {/if}</span>
+                            </a>
+                        </div>
+                    </div>
+                    {/home_featured_businesses}
+
+                    {/if}
+                    {/exp:channel:entries}
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+</div>-->
+
+<!--<div class="swoop-divider"></div>-->
+
+<div class="upcoming-events-section">
+    <div class="container container-extended">
+        <div class="row">
+            <div class="col-md-4">
+                <h2 class="heading text-48">Upcoming Events</h2>
+            </div>
+
+            <div class="col-md-8 text-right pb-4 pb-md-0">
+                <a class="line-before" href="http://business.hotsprings-sd.com/eventcalendar" title="See All Events">See All
+                    Events</a>
+            </div>
+<div id="mni-widgets-36d6ed4f" showLocation="true" showDescription="false" feedType="2" marquee="0" showLinks="true" emptyMessage="true"></div>
+<script type="text/javascript">
+/*<![CDATA[*/
+var _mniwq=_mniwq||[];
+_mniwq.push(["36d6ed4f.type","events_upcoming"],["36d6ed4f.category",[0,]],["36d6ed4f.path",32096],["36d6ed4f.daysForward",14],["36d6ed4f.showLocation",true],["36d6ed4f.showDescription",false],["36d6ed4f.teaserLength",500],["36d6ed4f.dateFormat","MMM d"],["36d6ed4f.titleLength",200],["36d6ed4f.showLinks",true],["36d6ed4f.emptyMessage","No Upcoming Events"],["36d6ed4f.limit",5],["36d6ed4f.scrollFreq",35],["36d6ed4f.marquee",false],["36d6ed4f.popUp",false],["36d6ed4f.styleTemplate","#@id .mn-scroll-container{font-family:arial,sans-serif;font-size:28px;line-height:130%;margin:8px;position:relative}#@id[marquee='1'] .mn-scroll-container{height:205px;overflow:hidden}#@id .mn-scroll-item{-moz-border-radius:0px;-webkit-border-radius:0px;background-clip:padding-box;background-color:#11455b;border-radius:0px;color:#fff;margin:0 0 4px;position:relative}#@id .mn-scroll-item:hover{background-color:#2b6b87;color:#fff}#@id .mn-scroll-name,#@id .mn-scroll-teaser,#@id .mn-scroll-contact,#@id .mn-scroll-contentdate,#@id[showLocation='true'] .mn-scroll-location,#@id[showDescription='true'] .mn-scroll-description,#@id[showSubTitle='true'] .mn-scroll-subtitle{display:block;padding:5px 3px 5px 5px;position:relative}#@id[feedType='3'] .mn-scroll-name,#@id[feedType='2'] .mn-scroll-name{display:inline-block}#@id[showDescription='true'] .mn-scroll-link{font-weight:bold}#@id[showDescription='true'] .mn-scroll-description p{margin:5px 0;font-size:80%}#@id[showLinks='true'] .mn-scroll-link{color:inherit;text-decoration:none}#@id[showLinks='true'] .mn-scroll-link:hover{text-decoration:underline}#@id[feedType='3'] .mn-scroll-date,#@id[feedType='2'] .mn-scroll-date{font-family:arial,sans-serif;font-size:28px;font-weight:700;left:3px;text-align:left;margin-left:5px;margin-right:25px;top:5px}#@id[marquee='2'] .mn-scroll-slider,#@id[marquee='1'] .mn-scroll-slider{position:absolute;width:100%}#@id[marquee='2'].mn-scroll-disabled .mn-scroll-container{height:auto;overflow:visible}#@id[marquee='2'].mn-scroll-disabled .mn-scroll-slider{position:relative;width:100%}#@id[emptyMessage='true'] .mn-message-empty{font-family:arial,sans-serif;font-size:28px;line-height:130%;margin:8px}"],["36d6ed4f.create","mni-widgets-36d6ed4f"]);
+(function(b,d,a,c){b.getElementById(d)||(c=b.getElementsByTagName(a)[0],a=b.createElement(a),a.type="text/javascript",a.async=!0,a.src="https://business.hotsprings-sd.com/GZContent/PublicWidgets/Widgets.min.js",c.parentNode.insertBefore(a,c))})(document,"mni-widgets-script","script");
+/*]]>*/
+</script>
+        </div>
+
+        <div class="events-container">
+            {exp:structure:entries channel="event" limit="6" show_future_entries="yes" sort="asc"}
+
+            <div class="event-item">
+                <div class="no-decoration event-item__image-container">
+                    <div class="event-item__date">
+                        <span class="d-block text-16 font-weight-extra-bold text-center text-uppercase pb-1">{entry_date format="%M"}</span>
+                        <span class="d-block text-48 font-weight-extra-bold text-center">{entry_date format="%d"}</span>
+                    </div>
+                    {if event_featured_image}
+                    <img class="event-item__image w-100" src="{event_featured_image}" alt="{title}" title="{title}"/>
+                    {if:else}
+                    <img class="event-item__image w-100" src="/assets/img/hot-springs-placeholder.jpg" alt="{title}"
+                         title="{title}"/>
+                    {/if}
+                </div>
+                <div class="event-item__content">
+                    <div class="event-item__title pt-3 pb-3">
+                        <h3>{title}</h3>
+                        {if entry_date != expiration_date}
+                        <div class="divider text-center">
+                            <hr/>
+                        </div>
+                        <span class="d-block date-to text-center w-100 text-uppercase font-weight-extra-bold mb-2">TO {expiration_date format="%M %d"}</span>
+                        {/if}
+                    </div>
+                    <p class="d-block"><span class="detail-heading opacity-50">When:</span> {event_timeframe}</p>
+                    <p class="d-block"><span class="detail-heading opacity-50">Where:</span> {event_location}</p>
+                    <div class="d-flex align-items-start">
+                        {if events_tickets_url}
+                        <a class="line-before font-weight-bold" href="{events_tickets_url}">Get Tickets</a>
+                        {/if}
+                        {if event_facebook_link}
+                        <a class="line-before font-weight-bold ml-5 pl-5" href="{event_facebook_link}">Facebook</a>
+                        {/if}
+                    </div>
+                    <a class="no-decoration event-item__link" href="/events/{url_title}/">Details</a>
+                </div>
+            </div><!-- /.row -->
+
+            {/exp:structure:entries}
+        </div>
+
+
+    </div>
+</div>
+<div class="swoop-divider mb-4"></div>
+<!--New Members section-->
+<div class="col-lg-8 mx-auto pr-sm-0 mt-5">
+    <div class="slider-inner">
+
+        {exp:channel:entries dynamic="no" channel="home"}
+        {if new_members}
+        <h2>New Members</h2>
+        <div id="businessSlider">
+            {new_members}
+            <div class="slide-item new-member-item">
+                <h3>{new_members:member_name}</h3>
+                <img src="{new_members:member_logo}" alt=""/>
+            </div>
+            {/new_members}
+        </div>
+        {/if}
+        {/exp:channel:entries}
+
+    </div>
+</div>
+<!-- New Members section end-->
+<div class="swoop-divider mb-4"></div>
+<!-- Springtides newsletter secondary promo -->
+<div class="container row mx-auto mb-5">
+    <div class="col-md-12">
+        <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between p-4 bg-white border">
+            <div class="mb-3 mb-md-0">
+                <h3 class="mb-1">Don’t miss what’s happening each week</h3>
+                <p class="mb-0">Subscribe to the Chamber of Commerce Springtides E-Newsletter for Thursday updates.</p>
+            </div>
+            <div>
+                <a class="btn btn-default"
+                   href="https://visitor.r20.constantcontact.com/manage/optin?v=001AYBE7UAKClmke4CvVkMlXiWmvm_wSW4jYpDCtwx7P1yGnTeuTPnP37G7PnSG6SylzZaYweM_WeAWIqAqppv6QaeQwlzH2wijciBlZmw06YWxnMqYtKc8Hy2UcuAFHBQPTzh3Vqva8c9c8iRA80EaigIpDw0yq6E1"
+                   target="_blank" rel="noopener">Subscribe</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="container row mx-auto">
+    <div class="col-md-4">
+        <h2>Contact Us</h2>
+        <p>
+            Interested in working together? Fill out some info and we will be in touch shortly. We can't wait to hear
+            from you!
+        </p>
+    </div>
+    <div class="col-md-7 mx-auto">
+        {exp:freeform_next:render form="contact_form" submit_class="btn btn-default" label_class="form-label"
+        input_class="form-control"
+        row-class="form-group" id="conForm"}
+    </div>
+</div>
+{exp:structure:entries entry_id="3"}
+
+
+<!--<div class="faq-section">
+
+    <div class="collapsable-faq">
+        <div class="container container-extended">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="sticky">
+                        <h2 class="text-48 heading">FAQ's about Hot Springs</h2>
+                        <div class="accordion" id="faqAccordian">
+
+                            {home_faqs}
+                            <div class="card">
+                                <div class="card-header" id="heading{home_faqs:count}">
+                                    <h2 class="mb-0 text-mulish">
+                                        <a class="" type="button" data-toggle="collapse"
+                                           data-target="#collapse{home_faqs:count}" aria-expanded="true"
+                                           aria-controls="collapse{home_faqs:count}">
+                                            Q: {home_faqs:question}
+                                        </a>
+                                    </h2>
+                                </div>
+
+                                <div id="collapse{home_faqs:count}" class="collapse {if home_faqs:count == 1}show{/if}"
+                                     aria-labelledby="heading{home_faqs:count}" data-parent="#faqAccordian">
+                                    <div class="card-body pt-5">
+                                        A: {home_faqs:answer}
+                                    </div>
+                                </div>
+                            </div>
+                            {/home_faqs}
+
+                        </div>
+                        <a class="line-before d-block pt-5 mt-3">CONTACT US FOR MORE ANSWERS</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 d-none d-sm-block">
+                    <div class="image-array">
+                        {faq_images}
+
+                        {if faq_images:image_1}
+                        <img class="image-1" src="{faq_images:image_1}" alt="" title=""/>
+                        {/if}
+                        {if faq_images:image_2}
+                        <img class="image-2" src="{faq_images:image_2}" alt="" title=""/>
+                        {/if}
+                        {if faq_images:image_3}
+                        <img class="image-3" src="{faq_images:image_3}" alt="" title=""/>
+                        {/if}
+                        {/faq_images}
+                    </div>
+                </div>
+            </div>
+        </div>&lt;!&ndash; /.container &ndash;&gt;
+    </div>
+
+
+</div>-->
+
+{layout:set name="nadir"}
+
+
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="iframe-wrapper">
+                    <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/JmBmN_lrZ8Y?enablejsapi=1&version=3&playerapiid=ytplayer"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script defer>
+    jQuery(document).ready(function ($) {
+        $('#attractionsSlider').slick({
+            infinite: false,
+            slidesToShow: 2,
+            arrows: true,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+        $('#businessSlider').slick({
+            infinite: false,
+            slidesToShow: 2,
+            arrows: true,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+
+
+        /**open hidden datepicker**/
+        $('#hiddenArrival').datepicker({
+            changeYear: 'true',
+            changeMonth: 'true',
+            startDate: '',
+            firstDay: 1
+        });
+        $('#arrivalClick').click(function (e) {
+            e.preventDefault();
+            $('#hiddenArrival').datepicker("show");
+        });
+
+        /**open hidden datepicker**/
+        $('#hiddenDepart').datepicker({
+            changeYear: 'true',
+            changeMonth: 'true',
+            startDate: '',
+            firstDay: 1,
+        });
+        $('#departureClick').click(function (e) {
+            e.preventDefault();
+            $('#departureClick').datepicker("show");
+        });
+
+
+        $('#hiddenArrival').on('change', function () {
+            var thisVal = $(this).val();
+            $('#arrivalText').text(thisVal);
+        });
+
+        $('#hiddenDepart').on('change', function () {
+            var thisVal = $(this).val();
+            $('#departText').text(thisVal);
+        });
+
+        equalHeightDivs();
+
+    });//document ready
+
+
+    function onYouTubeIframeAPIReady() {
+        var player;
+        player = new YT.Player('YouTubeBackgroundVideoPlayer', {
+            videoId: 'L2Wi8TKMwHU', // YouTube Video ID
+            width: 1280,               // Player width (in px)
+            height: 720,              // Player height (in px)
+            playerVars: {
+                playlist: 'L2Wi8TKMwHU',
+                autoplay: 1,        // Auto-play the video on load
+                autohide: 1,
+                disablekb: 1,
+                controls: 0,        // Hide pause/play buttons in player
+                showinfo: 0,        // Hide the video title
+                modestbranding: 1,  // Hide the Youtube Logo
+                loop: 1,            // Run the video in a loop
+                fs: 0,              // Hide the full screen button
+                autohide: 0,         // Hide video controls when playing
+                rel: 0,
+                enablejsapi: 1,
+                mute: 1
+            },
+            events: {
+                onReady: function (e) {
+                    e.target.mute();
+                    e.target.setPlaybackQuality('hd1080');
+                    e.target.playVideo();
+                },
+                onStateChange: function (e) {
+                    if (e && e.data === 1) {
+                        var videoHolder = document.getElementById('home-banner-box');
+                        if (videoHolder && videoHolder.id) {
+                            videoHolder.classList.remove('loading');
+                        }
+                    } else if (e && e.data === 0) {
+                        e.target.playVideo()
+                    }
+                }
+            }
+        });
+    }
+
+
+</script>
+{/layout:set}
+{/exp:structure:entries}

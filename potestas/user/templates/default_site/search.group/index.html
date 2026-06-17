@@ -1,0 +1,52 @@
+{layout="site/_layout_default" body_class="page search"}
+
+{layout:set name="styles"}
+<link rel="stylesheet" type="text/css" href="/assets/style/beta.css">
+{/layout:set}
+
+{exp:channel:entries entry_id="36"}
+
+{layout:set name="hero"}
+
+<div id="hero" class="row def">
+	<div class="container container-extended">
+		<div class="row">
+			<div class="col-12">
+				<h1 class="py-3">{title}</h1>
+			</div>
+		</div>
+	</div>
+</div>
+
+{/layout:set}
+
+<div class="container container-extended">
+	<div class="row">
+		<div class="col-12 main-col">
+			{embed="embeds/_page_blocks" entryid="{entry_id}"}
+	{/exp:channel:entries}
+
+			<h2><em>Search Results for "{exp:search:keywords}"</em></h2>
+			<div class="row search-results">
+
+				{exp:search:search_results}
+				<div class="col-12 py-2">
+					<a href="{page_url}" title="{title}">
+						{if title OR page_content OR member_content}
+						<h3 class="mb-2">{title}</h3>
+						{if page_content}
+						{page_content:excerpt}
+						{/if}
+						{if member_content}
+						{member_content:excerpt}
+						{/if}
+						{/if}
+					</a>
+
+				</div>
+				{/exp:search:search_results}
+
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,54 @@
+{layout="site/_layout_default" body_class="page single single-news"}
+
+{exp:structure:entries channel="news" require_entry="yes" url_title="{segment_3}"}
+{if no_results}
+    {redirect="404"}
+{/if}
+
+
+{layout:set name="hero"}
+{if news_featured_image}
+<div class="hero d-flex flex-column" style="background:url({news_featured_image:large});">
+{if:else}
+<div class="hero d-flex flex-column small-hero">
+{/if}
+  <div class="desktop-overlay d-none d-lg-block"></div>
+  {if news_featured_image}
+  <div class="heading-container flex-grow-1 d-lg-flex align-items-center">
+  {if:else}
+  <div class="heading-container flex-grow-1 d-lg-flex align-items-end">
+  {/if}
+
+    <div class="w-100 d-block">
+      <div class="container container-extended mb-auto d-flex align-items-md-end">
+        <div class="row">
+          <div class="col-12">
+
+            <div class="d-flex h-100 align-items-center">
+              <div>
+                <div>
+                  <span class="text-white"></span>
+                  <h2 class="heading text-white">{title}</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- /.hero -->
+{/layout:set}
+
+
+<div class="container container-extended pb-5">
+  <div class="row">
+    <div class="col py-3">
+      <h1 class="heading light-droplet mt-5">{title}</h1>
+      {embed="embeds/_page_blocks" entryid="{entry_id}"}
+    </div>
+  </div>
+</div>
+
+
+{/exp:structure:entries}
