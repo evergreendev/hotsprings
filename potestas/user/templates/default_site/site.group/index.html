@@ -119,6 +119,115 @@
     </div>
 </div>
 
+{if home_attractions}
+<section class="home-showcase home-showcase--attractions" aria-labelledby="home-attractions-title">
+    <div class="container container-extended">
+        <div class="home-section-heading">
+            <p class="home-section-kicker">Explore Hot Springs</p>
+            <h2 id="home-attractions-title" class="heading">Attractions</h2>
+            <a class="home-section-link" href="/member-directory/category/attractions/">View All Attractions</a>
+        </div>
+
+        <div class="home-card-grid home-card-grid--feature">
+            {home_attractions}
+            <article class="home-feature-card">
+                <a class="home-feature-card__link" href="/member-directory/{home_attractions:url_title}/">
+                    <div class="home-feature-card__media">
+                        {if home_attractions:member_featured_image}
+                        <img src="{home_attractions:member_featured_image:home-featured}" alt="{home_attractions:title}" loading="lazy">
+                        {if:else}
+                        <img src="/assets/img/hot-springs-placeholder.jpg" alt="{home_attractions:title}" loading="lazy">
+                        {/if}
+                    </div>
+                    <div class="home-feature-card__body">
+                        <span class="home-feature-card__count">{home_attractions:count}</span>
+                        <h3>{home_attractions:title}</h3>
+                        {if home_attractions:member_content}
+                        <p>{home_attractions:member_content:excerpt:limit characters="150" text_only="yes" remove_images="yes"}</p>
+                        {/if}
+                        <span class="home-feature-card__cta">{if home_attractions:member_callout_button_text}{home_attractions:member_callout_button_text}{if:else}Plan Your Visit{/if}</span>
+                    </div>
+                </a>
+            </article>
+            {/home_attractions}
+        </div>
+    </div>
+</section>
+{/if}
+
+<section class="home-showcase home-showcase--businesses" aria-labelledby="home-businesses-title">
+    <div class="container container-extended">
+        <div class="home-section-heading home-section-heading--light">
+            <p class="home-section-kicker">Local Favorites</p>
+            <h2 id="home-businesses-title" class="heading">Featured Businesses</h2>
+            <a class="home-section-link" href="http://business.hotsprings-sd.com/publicmemberdirectory">Browse Directory</a>
+        </div>
+
+        <div class="home-business-grid">
+            {home_featured_businesses}
+            <article class="home-business-card">
+                <a class="home-business-card__link" href="/member-directory/{home_featured_businesses:url_title}/">
+                    <div class="home-business-card__media">
+                        {if home_featured_businesses:member_featured_image}
+                        <img src="{home_featured_businesses:member_featured_image:home-featured}" alt="{home_featured_businesses:title}" loading="lazy">
+                        {if:else}
+                        <img src="/assets/img/hot-springs-placeholder.jpg" alt="{home_featured_businesses:title}" loading="lazy">
+                        {/if}
+                    </div>
+                    <div class="home-business-card__body">
+                        <span class="home-business-card__label">Featured</span>
+                        <h3>{home_featured_businesses:title}</h3>
+                        {if home_featured_businesses:member_content}
+                        <p>{home_featured_businesses:member_content:excerpt:limit characters="145" text_only="yes" remove_images="yes"}</p>
+                        {/if}
+                        <span class="home-business-card__cta">{if home_featured_businesses:member_callout_button_text}{home_featured_businesses:member_callout_button_text}{if:else}Learn More{/if}</span>
+                    </div>
+                </a>
+            </article>
+            {/home_featured_businesses}
+        </div>
+    </div>
+</section>
+
+{if home_faqs}
+<section class="home-faq-panel" aria-labelledby="home-faq-title">
+    <div class="container container-extended">
+        <div class="row align-items-start">
+            <div class="col-lg-4">
+                <div class="home-faq-panel__intro">
+                    <p class="home-section-kicker">Good To Know</p>
+                    <h2 id="home-faq-title" class="heading">FAQ</h2>
+                    <p>Quick answers for planning a visit, joining the Chamber, or getting connected in Hot Springs.</p>
+                    <a class="home-section-link" href="/contact">Ask A Question</a>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="home-faq-accordion accordion" id="homeFaqAccordion">
+                    {home_faqs}
+                    <div class="home-faq-item">
+                        <h3 class="home-faq-item__heading" id="homeFaqHeading{home_faqs:count}">
+                            <button class="home-faq-item__button {if home_faqs:count != 1}collapsed{/if}" type="button"
+                                    data-toggle="collapse" data-target="#homeFaqCollapse{home_faqs:count}"
+                                    aria-expanded="{if home_faqs:count == 1}true{if:else}false{/if}"
+                                    aria-controls="homeFaqCollapse{home_faqs:count}">
+                                {home_faqs:question}
+                            </button>
+                        </h3>
+                        <div id="homeFaqCollapse{home_faqs:count}" class="collapse {if home_faqs:count == 1}show{/if}"
+                             aria-labelledby="homeFaqHeading{home_faqs:count}" data-parent="#homeFaqAccordion">
+                            <div class="home-faq-item__answer">
+                                {home_faqs:answer}
+                            </div>
+                        </div>
+                    </div>
+                    {/home_faqs}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{/if}
+
 <!--<div class="top-attractions-section mx-0">
     <div class="">
         <div>
@@ -322,13 +431,24 @@ _mniwq.push(["36d6ed4f.type","events_upcoming"],["36d6ed4f.category",[0,]],["36d
 </div>
 <div class="swoop-divider mb-4"></div>
 <!--New Members section-->
-<div class="col-lg-8 mx-auto pr-sm-0 mt-5">
-    <div class="slider-inner">
+<section class="new-members-section">
+    <div class="container container-extended">
+        <div class="new-members-section__header">
+            <h2>New Members</h2>
+            <div class="new-members-section__arrows" aria-label="New members carousel controls">
+                <button class="new-members-section__arrow new-members-section__arrow--prev" type="button" aria-label="Previous new member">
+                    <i class="far fa-arrow-left" aria-hidden="true"></i>
+                </button>
+                <button class="new-members-section__arrow new-members-section__arrow--next" type="button" aria-label="Next new member">
+                    <i class="far fa-arrow-right" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        <div class="slider-inner">
 
         {exp:channel:entries dynamic="no" channel="home"}
         {if new_members}
-        <h2>New Members</h2>
-        <div id="businessSlider">
+        <div id="newMembersSlider">
             {new_members}
             <div class="slide-item new-member-item">
                 <h3>{new_members:member_name}</h3>
@@ -339,8 +459,9 @@ _mniwq.push(["36d6ed4f.type","events_upcoming"],["36d6ed4f.category",[0,]],["36d
         {/if}
         {/exp:channel:entries}
 
+        </div>
     </div>
-</div>
+</section>
 <!-- New Members section end-->
 <div class="swoop-divider mb-4"></div>
 <!-- Springtides newsletter secondary promo -->
@@ -518,6 +639,33 @@ _mniwq.push(["36d6ed4f.type","events_upcoming"],["36d6ed4f.category",[0,]],["36d
                 // You can unslick at a given breakpoint now by adding:
                 // settings: "unslick"
                 // instead of a settings object
+            ]
+        });
+        $('#newMembersSlider').slick({
+            infinite: false,
+            slidesToShow: 3,
+            arrows: true,
+            prevArrow: $('.new-members-section__arrow--prev'),
+            nextArrow: $('.new-members-section__arrow--next'),
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 520,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
             ]
         });
 
