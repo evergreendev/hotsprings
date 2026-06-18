@@ -471,6 +471,7 @@ a:hover {
 }
 .navbar .navbar-nav .nav-item .nav-link {
   color: #074ca1;
+  text-align: center;
 }
 .navbar .navbar-nav .dropdown-menu {
   border: 0 !important;
@@ -1555,6 +1556,10 @@ a:hover {
   }
   .navbar .navbar-nav .nav-item .nav-link.btn {
     padding: 2px 25px !important;
+  }
+  .navbar .navbar-nav .nav-item.dropdown:hover > .dropdown-menu, .navbar .navbar-nav .nav-item.dropdown:focus-within > .dropdown-menu {
+    display: block;
+    margin-top: 0;
   }
   .home .menu-cont:before {
     display: none;
