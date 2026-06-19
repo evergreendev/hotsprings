@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="evergreen" remoteFilesAllowedToDisappearOnAutoupload="false" confirmBeforeUploading="false" autoUploadExternalChanges="true">
+  <component name="PublishConfigData" autoUpload="Always" serverName="evergreen-live" remoteFilesAllowedToDisappearOnAutoupload="false" confirmBeforeUploading="false" autoUploadExternalChanges="true">
     <option name="confirmBeforeUploading" value="false" />
     <serverData>
-      <paths name="evergreen">
+      <paths name="crazyhorse">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="evergreen-live">
         <serverdata>
           <mappings>
             <mapping deploy="/hotsprings-sd.com/httpdocs" local="$PROJECT_DIR$" web="/" />
@@ -16,6 +23,20 @@
             <excludedPath path="/hotsprings-sd.com/httpdocs/themes" />
             <excludedPath path="/hotsprings-sd.com/httpdocs/uploads" />
           </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="hotsprings-live-deploy">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="local-xamp">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
         </serverdata>
       </paths>
     </serverData>

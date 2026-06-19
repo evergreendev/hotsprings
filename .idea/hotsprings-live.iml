@@ -6,6 +6,10 @@
       <sourceFolder url="file://$MODULE_DIR$/potestas/ee/installer_5.2.2/updater" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/potestas/ee/legacy/libraries/typography/Markdown" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/potestas/user/addons" isTestSource="false" packagePrefix="EEHarbor" />
+      <excludeFolder url="file://$MODULE_DIR$/.well-known" />
+      <excludeFolder url="file://$MODULE_DIR$/potestas/user/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/themes" />
+      <excludeFolder url="file://$MODULE_DIR$/uploads" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

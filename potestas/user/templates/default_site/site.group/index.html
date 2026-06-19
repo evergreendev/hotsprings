@@ -13,6 +13,17 @@
                 </div>
             </div>
         </div>-->
+    {if show_banner}
+    <div class="banner-container">
+        {if banner_url}
+        <a href="{banner_url}">
+            {banner}
+        </a>
+        {if:else}
+        {banner}
+        {/if}
+    </div>
+    {/if}
     <div class="d-flex align-items-center video-heading-container">
         <div>
             <h2 class="heading">{hero_heading}</h2>

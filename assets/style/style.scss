@@ -2723,3 +2723,13 @@ img[src*="cs.yieldoptimizer.com"] {
     gap: 1rem;
   }
 }
+
+.banner-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background-color: $darkgreen;
+  color: $white;
+}
