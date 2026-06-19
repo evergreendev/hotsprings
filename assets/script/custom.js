@@ -67,6 +67,30 @@ function equalHeightDivs(){
 
 
 $(document).ready(function(){
+  function setSideMenu(open){
+    var sideMenu = $('#sideMenu');
+    var backdrop = $('.side-menu-backdrop');
+    sideMenu.toggleClass('is-open', open).attr('aria-hidden', open ? 'false' : 'true');
+    $('.js-side-menu-toggle').attr('aria-expanded', open ? 'true' : 'false');
+    backdrop.prop('hidden', !open);
+    $('body').toggleClass('side-menu-open', open);
+  }
+
+  $('.js-side-menu-toggle').click(function(e){
+    e.preventDefault();
+    setSideMenu(!$('#sideMenu').hasClass('is-open'));
+  });
+
+  $('.js-side-menu-close').click(function(e){
+    e.preventDefault();
+    setSideMenu(false);
+  });
+
+  $(document).keyup(function(e){
+    if(e.key === 'Escape'){
+      setSideMenu(false);
+    }
+  });
 
   //home book now form
   $('#minusAdult').click(function(e){

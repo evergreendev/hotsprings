@@ -33,6 +33,11 @@
 
 <div class="menu-cont w-100">
     <div class="top-bar">
+        <button class="top-bar-menu-button js-side-menu-toggle" type="button"
+                aria-controls="sideMenu" aria-expanded="false" aria-label="Open menu">
+            <img src="/assets/img/hamburger-menu.png" alt="" aria-hidden="true"/>
+            <span>Menu</span>
+        </button>
         <div class="d-flex justify-content-start align-items-top">
             <a class="social-icon d-flex align-items-center justify-content-center mr-3"
                href="https://www.facebook.com/HotSpringsSouthDakota/" target="_blank" title="Hot Springs Facebook"><i
@@ -72,6 +77,69 @@
             {/exp:search:simple_form}
         </div>
     </div>
+    <div class="side-menu-backdrop js-side-menu-close" hidden></div>
+    <aside class="side-menu" id="sideMenu" aria-label="Main menu" aria-hidden="true">
+        <div class="side-menu__header">
+            <a class="side-menu__brand" href="/">
+                <img class="blue-logo"
+                     src="/uploads/Hot_Springs_Logo_Redesign2_Simple_with_Emboss_and_Outline.png"
+                     alt="Hot Springs South Dakota Logo" title="Hot Springs South Dakota Logo"/>
+            </a>
+            <button class="side-menu__close js-side-menu-close" type="button" aria-label="Close menu">
+                <i class="far fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+        <nav class="side-menu__nav" aria-label="Expanded main menu">
+            <ul class="side-menu__list">
+                <li class="side-menu__item">
+                    <a class="side-menu__link" href="https://hotspringschamberofcommerce.growthzoneapp.com/a/MIC/Login"
+                       title="BECOME A MEMBER">Member Hub Login</a>
+                </li>
+
+                <li class="side-menu__item side-menu__item--group">
+                    <a class="side-menu__link" href="/about" title="About Us">About Us</a>
+                    <ul class="side-menu__sublist">
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="https://business.hotsprings-sd.com/applicationtojoin">Become a Member</a></li>
+                        <li><a href="/about/committees">Committees</a></li>
+                        <li><a href="/about/cost-of-membership">Cost of Membership</a></li>
+                        <li><a href="/about/chamber-staff">Chamber Staff</a></li>
+                        <li><a href="/about/board-of-directors">Board of Directors</a></li>
+                    </ul>
+                </li>
+
+                <li class="side-menu__item side-menu__item--group">
+                    <a class="side-menu__link" href="/about" title="Relocate">Relocate</a>
+                    <ul class="side-menu__sublist">
+                        <li><a href="/relocate/live-here">Live Here</a></li>
+                        <li><a href="/relocate/education">Education</a></li>
+                        <li><a href="/relocate/economic-development">Economic Development</a></li>
+                    </ul>
+                </li>
+
+                <li class="side-menu__item">
+                    <a class="side-menu__link" href="http://business.hotsprings-sd.com/publicmemberdirectory"
+                       title="Member Directory">Business Directory</a>
+                </li>
+
+                <li class="side-menu__item">
+                    <a class="side-menu__link" href="http://business.hotsprings-sd.com/eventcalendar"
+                       title="Events">Events</a>
+                </li>
+
+                <li class="side-menu__item">
+                    <a class="side-menu__link" href="/visit/request-a-welcome-magazine"
+                       title="Welcome Magazine">Welcome Magazine</a>
+                </li>
+
+                <li class="side-menu__item">
+                    <a class="side-menu__link" href="/visit/request-a-southern-hills-vacation-guide">
+                        Southern Hills Vacation Guide
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
     <div class="container container-extended">
         <div class="row" style="margin-left:auto;margin-right:auto;">
             <div class="col-12">

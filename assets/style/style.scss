@@ -459,6 +459,140 @@ a{
   }
 }
 
+.top-bar-menu-button{
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: $white;
+  display: inline-flex;
+  font-weight: 800;
+  gap: 0.5rem;
+  margin-right: auto;
+  padding: 0 1rem;
+  text-transform: uppercase;
+  img{
+    display: block;
+    filter: brightness(0) invert(1);
+    height: 22px;
+    width: 22px;
+  }
+  &:hover,
+  &:focus{
+    color: $fadedwhite;
+    outline: none;
+  }
+}
+
+.side-menu{
+  background: $white;
+  box-shadow: 16px 0 40px rgba(7, 76, 161, 0.18);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  left: 0;
+  max-width: 420px;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  transform: translateX(-100%);
+  transition: transform 260ms ease;
+  width: min(88vw, 420px);
+  z-index: 1100;
+  &.is-open{
+    transform: translateX(0);
+  }
+}
+
+.side-menu-backdrop{
+  background: rgba(0, 0, 0, 0.35);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1090;
+}
+
+body.side-menu-open{
+  overflow: hidden;
+}
+
+.side-menu__header{
+  align-items: center;
+  border-bottom: 1px solid rgba(7, 76, 161, 0.16);
+  display: flex;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+}
+
+.side-menu__brand{
+  display: inline-flex;
+  img{
+    display: block;
+    max-width: 190px;
+  }
+}
+
+.side-menu__close{
+  align-items: center;
+  background: $darkgreen;
+  border: 2px solid $darkgreen;
+  color: $white;
+  display: inline-flex;
+  height: 42px;
+  justify-content: center;
+  transition: background 180ms ease, color 180ms ease;
+  width: 42px;
+  &:hover,
+  &:focus{
+    background: $white;
+    color: $darkgreen;
+  }
+}
+
+.side-menu__nav{
+  padding: 0.75rem 0 1.5rem;
+}
+
+.side-menu__list,
+.side-menu__sublist{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.side-menu__item{
+  border-bottom: 1px solid rgba(7, 76, 161, 0.12);
+}
+
+.side-menu__link{
+  color: $darkgreen;
+  display: block;
+  font-weight: 800;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  &:hover,
+  &:focus{
+    background: rgba(0, 108, 159, 0.08);
+    color: $green;
+    text-decoration: none;
+  }
+}
+
+.side-menu__sublist{
+  padding: 0 1.5rem 1rem;
+  a{
+    color: $brown;
+    display: block;
+    padding: 0.35rem 0;
+    &:hover,
+    &:focus{
+      color: $green;
+      text-decoration: none;
+    }
+  }
+}
+
 .menu-cont{
   -webkit-transition: background-color 300ms linear;
   -ms-transition: background-color 300ms linear;
@@ -2557,26 +2691,28 @@ img[src*="cs.yieldoptimizer.com"] {
 .new-member-item{
   background: $white;
   box-shadow: 0 14px 35px rgba(7, 76, 161, 0.12);
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
   overflow: hidden;
-  aspect-ratio: 1/1;
-  position: relative;
   h3{
     background: rgba(7, 76, 161, 0.88);
-    bottom: 0;
     color: $white;
-    left: 0;
+    grid-row: 2;
     margin:0;
     padding: 0.85rem 1rem;
-    position: absolute;
-    right: 0;
     text-align: center;
-    z-index: 1;
   }
   img {
+    box-sizing: border-box;
+    display: block;
+    grid-row: 1;
+    min-height: 0;
+    min-width: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
+    padding: 1rem;
   }
 }
 
