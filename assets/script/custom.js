@@ -86,6 +86,34 @@ $(document).ready(function(){
     setSideMenu(false);
   });
 
+  function showSearchTooltip(form, message){
+    var tooltip = form.find('.search-tooltip');
+    var existingTimeout = tooltip.data('timeout');
+
+    if(!tooltip.length){
+      tooltip = $('<div class="search-tooltip" role="status" aria-live="polite"></div>');
+      form.find('.input-icons').append(tooltip);
+    }
+
+    clearTimeout(existingTimeout);
+    tooltip.text(message).addClass('is-visible');
+    tooltip.data('timeout', setTimeout(function(){
+      tooltip.removeClass('is-visible');
+    }, 2500));
+  }
+
+  $('.top-bar .search-bar form').submit(function(e){
+    var form = $(this);
+    var keywords = $(this).find('input[name="keywords"]');
+    var searchTerm = $.trim(keywords.val());
+
+    if(searchTerm.length < 3){
+      e.preventDefault();
+      keywords.focus();
+      showSearchTooltip(form, 'Search terms must be at least 3 characters long');
+    }
+  });
+
   $(document).keyup(function(e){
     if(e.key === 'Escape'){
       setSideMenu(false);
